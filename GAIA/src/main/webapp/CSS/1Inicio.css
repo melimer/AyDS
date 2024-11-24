@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+body {
+	margin: 20px;
+	padding: 0;
+	font-family: "Comfortaa";
+	color: #666;
+	background: white;
+	font-size: 22px;
+	line-height: 1.5em;
+	padding-top: 100px;
+}
+
+#contenedor{
+  overflow:hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#D1{ float: left; }
+#D2{ float:left; }
+#D3{ float: left; }
+
+#img{
+  width: 300px;
+  height: 300px;
+	margin-right: 15px;
+}
+#img:hover {filter: opacity(.5);}
+
+#main-header {
+	background: #E9B7B5;
+	color: white;
+	height: 80px;
+	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+}
+#main-header {
+	background: #E9B7B5;
+	color: white;
+	height: 80px;
+}
+#main-header a {color: white;}
+#logo-header {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none; }
+#logo-header:hover {color: #FADFDD;}
+#logo-header .site-name {
+		display: block;
+		font-weight: 700;
+		font-size: 1.2em; }
+#logo-header .site-desc {
+		display: block;
+		font-weight: 300;
+		font-size: 0.8em;
+		color: #FADFDD; }
+nav {
+	float: right;
+}
+	nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		padding-right: 20px;
+	}
+	nav ul li {
+		display: inline-block;
+		line-height: 80px;
+	}
+	nav ul li a {
+		display: block;
+		padding: 0 10px;
+		text-decoration: none;
+	}
+	nav ul li a:hover {
+		background: #FADFDD;
+        }      
+        .boton {
+		display: inline-block;
+		padding: 0 10px;
+		text-decoration: none;
+                background: #E9B7B5;
+                line-height: 80px;
+                border: none;
+                font-family: "Comfortaa";
+                color: white;
+                font-size: 22px;
+	}
+	.boton:hover {
+		background: #FADFDD;
+        }

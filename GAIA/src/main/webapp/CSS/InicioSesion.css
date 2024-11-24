@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+body {
+  background-color: #CBCBCB;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url("../IMG/InicioSesion.png");
+}
+#login-box {
+    border: 1px solid #00000080;
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15%;
+    background: #00000080;
+    padding: 20px 50px;
+    border-radius:10px;
+}
+#login-box .form .item input {
+    width:90%;
+    border-radius:10px;
+    border:0px solid #F5F5EF;
+    font-size: 18px;
+    background: #FFFFFF;
+    color: white;
+    padding: 5px 10px;
+    
+    
+}
+#login-box h1 {
+    color: white;
+    font-family:"Comfortaa";
+    font-size:30px;
+    text-align:center;
+}
+#login-box .form .item i {
+    color: white;
+    font-size: 18px;
+}
+#login-box button {
+    border: 0;
+    width: 150px;
+    height: 30px;
+    margin-top: 18px;
+    font-size: 18px;
+    color: #FFFFFF;
+    border-radius: 25px;
+    background-color: #E9B7B5;
+}
