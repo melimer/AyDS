@@ -8,7 +8,7 @@ package com.Modelo;
 /**
  *
  */
-public class PEmbarazo {
+public class PEmbarazo{
     private String sexo;
     private String semanas;
 

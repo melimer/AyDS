@@ -215,6 +215,25 @@ String idPadre = "";
         }
         return null;
     }
+    
+    public String[] BuscarPorId(String id_usuario) throws Exception {
+        String datos[] = new String[2];
+        try {
+            this.conectar();
+            String sql = "Select * from usuario where id_usuario=?;";
+            PreparedStatement ps = this.getCon().prepareStatement(sql);
+            ps.setString(1, id_usuario);
+            ResultSet res = ps.executeQuery();
+            if (res.next()) {
+                datos[0] = res.getString("nombre");
+                datos[1] = res.getString("correo_electronico");
+                return datos;
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+        return null;
+    }
 
     public String BuscarSesion(String correo) throws Exception {
         String id;
@@ -315,6 +334,42 @@ String idPadre = "";
         return null;
     }
     
+    public String BuscarUsuarioPersona(String id_persona) throws Exception {
+        String id;
+        try {
+            this.conectar();
+            String sql = "Select * from usuario_pemba where id_persona=?";
+            PreparedStatement ps = this.getCon().prepareStatement(sql);
+            ps.setString(1, id_persona);
+            ResultSet res = ps.executeQuery();
+            if (res.next()) {
+                id = res.getString("id_usuario");
+                return id;
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+        return null;
+    }
+    
+        public String BuscarUsuarioMedico(String id_medico) throws Exception {
+        String id;
+        try {
+            this.conectar();
+            String sql = "Select * from usuario_medico where id_medico=?";
+            PreparedStatement ps = this.getCon().prepareStatement(sql);
+            ps.setString(1, id_medico);
+            ResultSet res = ps.executeQuery();
+            if (res.next()) {
+                id = res.getString("id_usuario");
+                return id;
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+        return null;
+    }
+    
     public PEmbarazo BuscarPadre(String id_persona) throws Exception {
         boolean nacido;
         String sexo;
@@ -338,6 +393,8 @@ String idPadre = "";
         }
         return null;
     }
+    
+    
     
         public String BuscarPadre2(String id_usuario) throws Exception {
         String id_persona;
