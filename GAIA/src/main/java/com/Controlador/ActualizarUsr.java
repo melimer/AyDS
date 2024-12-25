@@ -87,9 +87,6 @@ public class ActualizarUsr extends HttpServlet {
         String correo = request.getParameter("user_mail");
         ActsUser act=new ActsUser();
         Usuario user=new Usuario();
-        
-        
-        
         try {
             if (act.ModifUsuario(nombre, correo, apodo, correoOrig) > 0) {
                  PrintWriter out = response.getWriter();
