@@ -12,6 +12,22 @@
         <servlet-name>ModifSintomasEm</servlet-name>
         <servlet-class>com.Controlador.ModifSintomasEm</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SolicitudPem</servlet-name>
+        <servlet-class>com.Controlador.SolicitudPem</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcesarSolicitudes</servlet-name>
+        <servlet-class>com.Controlador.ProcesarSolicitudes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcesarPamed</servlet-name>
+        <servlet-class>com.Controlador.ProcesarPamed</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SolicitudMed</servlet-name>
+        <servlet-class>com.Controlador.SolicitudMed</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ActualizarUsr</servlet-name>
         <url-pattern>/ActualizarUsr</url-pattern>
@@ -23,6 +39,22 @@
     <servlet-mapping>
         <servlet-name>ModifSintomasEm</servlet-name>
         <url-pattern>/ModifSintomasEm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SolicitudPem</servlet-name>
+        <url-pattern>/SolicitudPem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcesarSolicitudes</servlet-name>
+        <url-pattern>/ProcesarSolicitudes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcesarPamed</servlet-name>
+        <url-pattern>/ProcesarPamed</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SolicitudMed</servlet-name>
+        <url-pattern>/SolicitudMed</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
