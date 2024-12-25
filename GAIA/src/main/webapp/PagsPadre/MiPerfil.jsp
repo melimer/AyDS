@@ -76,6 +76,7 @@
         <nav>
             <ul>
                 <li><a href="InicioPadre.jsp">Inicio</a></li>
+                <li><a href="Lista/Medicos.jsp">Lista de médicos</a></li>
             </ul>
         </nav>
     </header>
