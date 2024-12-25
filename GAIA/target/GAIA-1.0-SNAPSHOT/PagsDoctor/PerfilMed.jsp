@@ -71,6 +71,7 @@
  		<nav>
  			<ul>
  				<li><a href="InicioMed.jsp">Inicio</a></li>
+ 				<li><a href="Lista/Pacientes.jsp">Lista de pacientes</a></li>
  			</ul>
  		</nav>
  	</header>

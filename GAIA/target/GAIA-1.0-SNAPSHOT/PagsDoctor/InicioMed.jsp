@@ -1,5 +1,4 @@
 
---%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.Modelo.ActsUser" %>
 <%@page import="com.Modelo.Usuario" %>
@@ -26,7 +25,6 @@
 %>
 <!DOCTYPE html>
 <html>
-<!-- Asteria: Proyecto GAIA-->
  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title> Inicio Médico </title>
@@ -45,8 +43,7 @@
  			</ul>
  		</nav>
  	</header>
-
-   <%out.println("<h1>" + nombre +"</h1>"); %>
+     <h1><% out.println(nombre); %></h1>
    <DIV id="contenedor">
    <div id="D1">
      <h3>Foros</h3>
