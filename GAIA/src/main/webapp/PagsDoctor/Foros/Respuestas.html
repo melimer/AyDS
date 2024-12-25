@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<!-- Asteria: Proyecto RHEA-->
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title> Tu respuesta </title>
+    <link rel="stylesheet" href="../../CSS/ForoCrear.css">
+ </head>
+ <body>
+
+   <header id="main-header">
+ 		<a id="logo-header" href="#">
+ 			<span class="site-name">RHEA</span>
+ 			<span class="site-desc">Por Asteria</span>
+ 		</a>
+ 		<nav>
+ 			<ul>
+                            <li><a href="VerForo.jsp">Regresar</a></li>
+ 			</ul>
+ 		</nav>
+ 	</header>
+
+  <br>
+<div class="form">
+  <form action= "../../DirecForo2" method="post">
+    <h2> Tu respuesta: </h2>
+    <hr>
+    <textarea name="descrip" rows="10" maxlength="1700" cols="50" required></textarea>
+    <input type="submit" class="submi" name="accion" value="Responder"/>
+  </form>
+</div>
+
+ </body>
+</html>
