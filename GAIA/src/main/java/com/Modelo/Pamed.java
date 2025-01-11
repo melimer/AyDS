@@ -162,4 +162,26 @@ public class Pamed extends Conexion {
         }
         return modif;
     }
+    
+    public boolean sonRegistro(String id_persona, String id_medico){
+        PreparedStatement ps;
+        ResultSet rs;
+        try {
+            this.conectar();
+            String sql = "Select * from pa_med where id_persona = ? and id_medico=?;";
+            ps = this.getCon().prepareStatement(sql);
+            ps.setString(1, id_persona);
+            ps.setString(2, id_medico);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                System.out.println(rs.getRow());
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            System.out.println("Error al buscar solicitud: " + e.getMessage());
+
+        }
+            return false;
+    }
 }

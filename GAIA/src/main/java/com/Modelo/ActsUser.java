@@ -400,12 +400,29 @@ String idPadre = "";
         String id_persona;
         try {
             this.conectar();
-            String sql = "Select * from p_embarazo inner join usuario_pemba on usuario_pemba.id_persona=usuario_pemba.id_persona where id_usuario=?";
+            String sql = "Select * from p_embarazo inner join usuario_pemba on usuario_pemba.id_persona=p_embarazo.id_persona where id_usuario=?";
             PreparedStatement ps = this.getCon().prepareStatement(sql);
             ps.setString(1, id_usuario);
             ResultSet res = ps.executeQuery();
             if (res.next()) {
                 id_persona = res.getString("id_persona");
+                return id_persona;
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+        return null;
+    }
+        public String BuscarMedico(String id_usuario) throws Exception {
+        String id_persona;
+        try {
+            this.conectar();
+            String sql = "select*from medico inner join usuario_medico on usuario_medico.id_medico=medico.id_medico where id_usuario=?";
+            PreparedStatement ps = this.getCon().prepareStatement(sql);
+            ps.setString(1, id_usuario);
+            ResultSet res = ps.executeQuery();
+            if (res.next()) {
+                id_persona = res.getString("id_medico");
                 return id_persona;
             }
         } catch (Exception e) {
