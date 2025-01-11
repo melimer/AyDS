@@ -1,5 +1,5 @@
 # AyDS
-Repositorio de código y documentación del proyecto de la materia de Análisis y Diseño de Software.
+Repositorio de código del proyecto de la materia de Análisis y Diseño de Software.
 5CM4
 Profesora Melara Abarca Reyna Elia
 Alumnos:
