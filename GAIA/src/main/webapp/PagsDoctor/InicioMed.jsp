@@ -1,5 +1,4 @@
 
---%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.Modelo.ActsUser" %>
 <%@page import="com.Modelo.Usuario" %>
@@ -26,7 +25,6 @@
 %>
 <!DOCTYPE html>
 <html>
-<!-- Asteria: Proyecto GAIA-->
  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title> Inicio Médico </title>
@@ -40,13 +38,13 @@
  		</a>
  		<nav>
  			<ul>
-                            <li><a href="AgendaMed.jsp">Agenda</a></li>
+                            <li class="chat-icon"><a href="Chat/Lista_Chats.jsp"><img src="../IMG/chat-icon.png" alt="icon-chat"/></img></a></li>
+                            <li><a href="Citas/CitasDoc.jsp">Agenda</a></li>
  				<li><a href="PerfilMed.jsp">Usuario</a></li>
  			</ul>
  		</nav>
  	</header>
-
-   <%out.println("<h1>" + nombre +"</h1>"); %>
+     <h1><% out.println(nombre); %></h1>
    <DIV id="contenedor">
    <div id="D1">
      <h3>Foros</h3>

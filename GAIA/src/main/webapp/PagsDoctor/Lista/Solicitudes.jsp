@@ -55,6 +55,7 @@
         </a>
         <nav>
             <ul>
+                <li class="chat-icon"><a href="../Chat/Lista_Chats.jsp"><img src="../../IMG/chat-icon.png" alt="icon-chat"/></img></a></li>
                 <li><a href="../InicioMed.jsp">Inicio</a></li>
             </ul>
         </nav>

@@ -16,7 +16,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <!-- Asteria: Proyecto RHEA-->
+    <!-- Asteria: Proyecto GAIA-->
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title> Foro </title>
@@ -26,7 +26,7 @@ and open the template in the editor.
 
         <header id="main-header">
             <a id="logo-header" href="#">
-                <span class="site-name">RHEA</span>
+                <span class="site-name">GAIA</span>
                 <span class="site-desc">Por Asteria</span>
             </a>
             <nav>
