@@ -1,8 +1,3 @@
-<%-- 
-    Document   : VerForo
-    Created on : 8 dic. 2021, 13:33:24
-    Author     : karlaviles
---%>
 
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>

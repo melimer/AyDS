@@ -1,8 +1,4 @@
-<%-- 
-    Document   : Foros
-    Created on : 7 dic. 2021, 18:56:20
-    Author     : karlaviles
---%>
+
 
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
