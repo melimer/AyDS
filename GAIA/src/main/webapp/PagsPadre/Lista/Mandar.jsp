@@ -73,6 +73,7 @@ form input[type="password"]{
         </a>
         <nav>
             <ul>
+                 <li class="chat-icon"><a href="../Chat/Lista_Chats.jsp"><img src="../../IMG/chat-icon.png" alt="alt"/></img></a></li>
                 <li><a href="../InicioPadre.jsp">Inicio</a></li>
             </ul>
         </nav>

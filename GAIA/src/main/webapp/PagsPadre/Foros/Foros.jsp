@@ -1,8 +1,4 @@
-<%-- 
-    Document   : Foros
-    Created on : 7 dic. 2021, 18:56:20
-    Author     : karlaviles
---%>
+
 
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
@@ -11,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<!-- Asteria: Proyecto RHEA-->
+<!-- Asteria: Proyecto GAIA-->
  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title> Foros </title>
@@ -21,7 +17,7 @@
 
    <header id="main-header">
  		<a id="logo-header" href="#">
- 			<span class="site-name">RHEA</span>
+ 			<span class="site-name">GAIA</span>
  			<span class="site-desc">Por Asteria</span>
  		</a>
  		<nav>

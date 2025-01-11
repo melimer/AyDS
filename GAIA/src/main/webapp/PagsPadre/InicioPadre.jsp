@@ -46,8 +46,9 @@
  		</a>
  		<nav>
  			<ul>
-        <li><a href="Agenda.jsp">Agenda</a></li>
- 				<li><a href="MiPerfil.jsp">Usuario</a></li>
+                            <li class="chat-icon"><a href="Chat/Lista_Chats.jsp"><img src="../IMG/chat-icon.png" alt="alt"/></img></a></li>
+                            <li><a href="Citas/Citas.jsp">Citas</a></li>
+                            <li><a href="MiPerfil.jsp">Usuario</a></li>
  			</ul>
  		</nav>
  	</header>

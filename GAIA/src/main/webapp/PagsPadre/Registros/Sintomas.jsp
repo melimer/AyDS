@@ -29,6 +29,7 @@
         Usuario usr = act.Usuario(user);
         String nombre = usr.getNombre();
         String correo = usr.getCorreo();
+        System.out.println(correo);
         String id_usuario = act.BuscarSesion(correo);
         String id_padre = act.BuscarPadre2(id_usuario);
 %>
