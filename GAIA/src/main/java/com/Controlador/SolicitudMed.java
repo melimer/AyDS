@@ -137,7 +137,7 @@ public class SolicitudMed extends HttpServlet {
                 response.setContentType("text/html");
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('Ya enviaste solicitud a este usuario.')");
-                out.println("window.location.assign('PagsPadre/Lista/Medicos.jsp')");
+                out.println("window.location.assign('PagsDoctor/Lista/Pacientes.jsp')");
                 out.println("</script>");
 
             }

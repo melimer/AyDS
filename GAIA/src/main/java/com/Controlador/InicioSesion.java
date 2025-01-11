@@ -88,6 +88,7 @@ public class InicioSesion extends HttpServlet {
             } catch (Exception ex) {
                 Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
             }
+            System.out.println(id); 
             try {
                 if (Integer.parseInt(id) == 1) {
                     HttpSession objSesion = request.getSession();

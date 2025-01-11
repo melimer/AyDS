@@ -84,7 +84,7 @@ public class ProcesarPamed extends HttpServlet {
         if (tipo_usr.equals("1")) {
             //es medico
             if ("ver".equals(accion)) {
-                response.sendRedirect("PagsDoctor/Pacientes/MenuPacientes.html");
+                response.sendRedirect("PagsDoctor/Pacientes/MenuPacientes.jsp?id="+id_persona);
             } else if ("eliminar".equals(accion)) {
                 Pamed pa = new Pamed();
                 boolean eliminado = false;
