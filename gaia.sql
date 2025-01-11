@@ -1,4 +1,7 @@
+drop database if exists GAIA;
+create database GAIA;
 use GAIA;
+
 
 -- Gaia.usuario definition
 
@@ -20,6 +23,7 @@ CREATE TABLE `medico` (
   `cedula` varchar(8) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_medico`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 
 -- Gaia.p_embarazo definition
 
@@ -54,12 +58,19 @@ CREATE TABLE `usuario_pemba` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `disponibilidad` (
-  `id_disp` int NOT NULL AUTO_INCREMENT,
-  `dis_semana` int,
-  `hora_inicio` time,
-  `hora_fin` time,
-  PRIMARY KEY (`id_disp`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+    id_disp INT AUTO_INCREMENT PRIMARY KEY,
+    dia VARCHAR(20) NOT NULL,
+    hora_inicio TIME NOT NULL,
+    hora_fin TIME NOT NULL,
+    estado VARCHAR(100) NOT NULL,
+    municipio VARCHAR(100) NOT NULL,
+    colonia VARCHAR(100) NOT NULL,
+    calle VARCHAR(100) NOT NULL,
+    numero_ext INT NOT NULL,
+    numero_int INT,
+    unidad_medica VARCHAR(150) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 
 CREATE TABLE `medico_disponibilidad` (
   `id_medico` int DEFAULT NULL,
@@ -176,6 +187,14 @@ CREATE TABLE `regis_estudio` (
   CONSTRAINT `regis_estudio_ibfk_2` FOREIGN KEY (`id_registro`) REFERENCES `registros` (`id_registro`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+-- Gaia.mensajes definition
+
+CREATE TABLE `mensajes` (
+  `id_mensaje` int NOT NULL AUTO_INCREMENT,
+  `comentario` varchar(1700) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `fecha_mensaje` date DEFAULT NULL,
+  PRIMARY KEY (`id_mensaje`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Gaia.foro definition
 
@@ -197,6 +216,14 @@ CREATE TABLE `foro_msg` (
   CONSTRAINT `foro_msg_ibfk_1` FOREIGN KEY (`id_mensaje`) REFERENCES `mensajes` (`id_mensaje`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `foro_msg_ibfk_2` FOREIGN KEY (`id_foro`) REFERENCES `foro` (`id_foro`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Gaia.temas definition
+
+CREATE TABLE `temas` (
+  `id_tema` int NOT NULL AUTO_INCREMENT,
+  `nombre_t` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id_tema`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 -- Gaia.foro_tema definition
@@ -222,15 +249,6 @@ CREATE TABLE `med_foro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
--- Gaia.mensajes definition
-
-CREATE TABLE `mensajes` (
-  `id_mensaje` int NOT NULL AUTO_INCREMENT,
-  `comentario` varchar(1700) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `fecha_mensaje` date DEFAULT NULL,
-  PRIMARY KEY (`id_mensaje`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
 
 -- Gaia.replica definition
 
@@ -241,15 +259,6 @@ CREATE TABLE `replica` (
   `fecha_replica` date DEFAULT NULL,
   PRIMARY KEY (`id_replica`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-
--- Gaia.temas definition
-
-CREATE TABLE `temas` (
-  `id_tema` int NOT NULL AUTO_INCREMENT,
-  `nombre_t` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  PRIMARY KEY (`id_tema`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 -- Gaia.msg_replica definition
@@ -311,7 +320,23 @@ CREATE TABLE `solicitudes_med_pa` (
   CONSTRAINT `med_pa_soli_ibfk_2` FOREIGN KEY (`id_medico`) REFERENCES `medico` (`id_medico`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
+-- tipo emisor: 0-persona embarazada, 1-medico
+CREATE TABLE `mensaje` (
+  `id_msg` int NOT NULL AUTO_INCREMENT,
+  `cont_msg` text CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL ,
+  `fecha_msg` date DEFAULT NULL,
+  `id_emisor` int DEFAULT NULL,
+  `tipo_emisor` int DEFAULT NULL,
+  `leido` boolean DEFAULT NULL,
+  `hora_msg` time DEFAULT NULL,
+  `id_persona` int DEFAULT NULL,
+  `id_medico` int DEFAULT NULL,
+  PRIMARY KEY (`id_msg`),
+  KEY `id_persona` (`id_persona`),
+  KEY `id_medico` (`id_medico`),
+  CONSTRAINT `mensaje_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `p_embarazo` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `mensaje_ibfk_2` FOREIGN KEY (`id_medico`) REFERENCES `medico` (`id_medico`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO GAIA.temas (nombre_t) VALUES
 	 ('Salud Bebé'),
@@ -319,4 +344,32 @@ INSERT INTO GAIA.temas (nombre_t) VALUES
 	 ('Nombres'),
 	 ('Médico'),
 	 ('Cuidados');
+     
+INSERT INTO GAIA.usuario () VALUES (1, 'admin','','','',CURRENT_DATE);
+
+CREATE TABLE `cita` (
+  `id_cita` INT NOT NULL AUTO_INCREMENT,
+  `fecha` DATE NOT NULL,
+  `hora_in` TIME NOT NULL,
+  `hora_fin` TIME NOT NULL,
+  `lugar` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `id_persona` INT NOT NULL,
+  `id_medico` INT NOT NULL,
+  PRIMARY KEY (`id_cita`),
+  KEY `id_persona_fk` (`id_persona`),
+  KEY `id_medico_fk` (`id_medico`),
+  CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `p_embarazo` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `cita_ibfk_2` FOREIGN KEY (`id_medico`) REFERENCES `medico` (`id_medico`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+CREATE TABLE `horarios_oc` (
+  `id_horario` INT NOT NULL AUTO_INCREMENT,
+  `fecha` DATE,
+  `ult_time` TIME,
+  `ocupado` BOOLEAN NOT NULL DEFAULT 0,
+  `id_disp` INT NOT NULL, -- Relación con disponibilidad
+  PRIMARY KEY (`id_horario`),
+  CONSTRAINT `fk_horarios_oc_disponibilidad` FOREIGN KEY (`id_disp`) REFERENCES `disponibilidad`(`id_disp`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 
