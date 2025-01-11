@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    background: white url("../IMG/Plant.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    font-family: "Comfortaa", sans-serif;
+    color: #666;
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #CB9391;
+    margin-bottom: 20px;
+}
+
+
+form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #CB9391;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"], input[type="time"], select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #E9B7B5;
+    border-radius: 10px;
+    background-color: #FDF6F5;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="time"]:focus, select:focus {
+    border-color: #CB9391;
+    box-shadow: 0 0 8px rgba(203, 147, 145, 0.5);
+}
+
+fieldset {
+    border: 2px solid #E9B7B5;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #FDF6F5;
+}
+
+legend {
+    font-size: 1.2rem;
+    color: #CB9391;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+
+button {
+    display: block;
+    width: 100%;
+    background-color: #E9B7B5;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #CB9391;
+}
+
+button:disabled {
+    background-color: #FDF6F5;
+    color: #E9B7B5;
+    border: 2px solid #E9B7B5;
+    cursor: not-allowed;
+}
+
+
+.submi {
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    background-color: #E9B7B5;
+    border-radius: 50px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+.submi:disabled {
+    background-color: #FDF6F5;
+    color: #E9B7B5;
+    border: 2px solid #E9B7B5;
+    cursor: not-allowed;
+}
+
+.submi:hover:not(:disabled) {
+    background-color: #CB9391;
+}
+
+label[for="keepLocation"] {
+    font-size: 1rem;
+    color: #666;
+    display: inline;
+    align-items: center;
+    gap: 10px; /* Espacio entre el checkbox y el texto */
+    margin-bottom: 0px; /* Espaciado adicional para separarlo de otros elementos */
+}
+
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    display: inline;
+    align-items: center;
+    border: 2px solid #E9B7B5;
+    border-radius: 4px;
+    background-color: #FDF6F5;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #CB9391;
+    border-color: #CB9391;
+}
+
+input[type="checkbox"]::before {
+    content: "✔";
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
+
+.error {
+    color: #D8000C;
+    background: #FFD6D6;
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Table styles */
+.schedule-table {
+    width: 100%;
+    padding:10px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table thead {
+    background-color: #E9B7B5;
+    color: white;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 10px;
+    border: 1px solid #E9B7B5;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #FDF6F5;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #FADFDD;
+}
+
+
+.submi {
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    background-color: #E9B7B5;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.submi:disabled {
+    background-color: #FDF6F5;
+    color: #E9B7B5;
+    border: 2px solid #E9B7B5;
+    cursor: not-allowed;
+}
+
+.submi:hover:not(:disabled) {
+    background-color: #CB9391;
+}

@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+body {
+    margin: 20px;
+    padding: 0;
+    font-family: "Comfortaa";
+    color: #666;
+    background: white;
+    background-image: url("../IMG/zformularios.png");
+    background-size: cover;
+    font-size: 22px;
+    line-height: 1.5em;
+    padding-top: 100px;
+}
+
+/* Formulario principal */
+form {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Etiquetas */
+label {
+    font-size: 20px;
+    color: #CB9391;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Selects */
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #E9B7B5;
+    border-radius: 10px;
+    background-color: #FDF6F5;
+    color: #666;
+    outline: none;
+    -webkit-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+}
+
+
+select:focus {
+    border-color: #CB9391;
+    box-shadow: 0 0 8px rgba(203, 147, 145, 0.5);
+}
+#duracionConsulta{
+    width: 97%;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #E9B7B5;
+    border-radius: 10px;
+    background-color: #FDF6F5;
+    color: #666;
+    outline: none;
+    -webkit-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+}
+#fecha{
+    width: 97%;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #E9B7B5;
+    border-radius: 10px;
+    background-color: #FDF6F5;
+    color: #666;
+    outline: none;
+    -webkit-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Botón de enviar */
+.submi {
+    font-size: 20px;
+    font-family: "Comfortaa";
+    color: #E9B7B5;
+    border-radius: 100px;
+    border: 2px solid #E9B7B5;
+    background-color: white;
+    width: 180px;
+    height: 40px;
+    align-self: center;
+    cursor: not-allowed; /* Deshabilitado inicialmente */
+    opacity: 0.6; /* Indicar estado deshabilitado */
+    -webkit-transition: opacity 300ms ease-in-out, color 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.submi:enabled {
+    cursor: pointer;
+    opacity: 1; /* Habilitado */
+}
+
+.submi:enabled:hover {
+    box-shadow: 0 0 40px 40px #E9B7B5 inset;
+    color: white;
+}
+#contenedor{
+  overflow:hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main-header {
+	background: #E9B7B5;
+	color: white;
+	height: 80px;
+	width: 100%; 
+	left: 0; 
+	top: 0; 
+	position: fixed; 
+}
+#main-header {
+	background: #E9B7B5;
+	color: white;
+	height: 80px;
+}
+#main-header a {color: white;}
+#logo-header {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none; }
+#logo-header:hover {color: #FADFDD;}
+#logo-header .site-name {
+		display: block;
+		font-weight: 700;
+		font-size: 1.2em; }
+#logo-header .site-desc {
+		display: block;
+		font-weight: 300;
+		font-size: 0.8em;
+		color: #FADFDD; }
+nav {
+	float: right;
+}
+	nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		padding-right: 20px;
+	}
+	nav ul li {
+		display: inline-block;
+		line-height: 80px;
+	}
+	nav ul li a {
+		display: block;
+		padding: 0 10px;
+		text-decoration: none;
+	}
+	nav ul li a:hover {
+		background: #FADFDD;
+ }

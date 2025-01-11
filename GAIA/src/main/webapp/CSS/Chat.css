@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+body{
+  padding-top: 80px;
+  line-height: 1.5em;
+  background-color:#F5F5EF;
+  font-family: "Comfortaa";
+  font-size: 22px;
+}
+#main-header {
+	background: #E9B7B5;
+	color: white;
+	height: 80px;
+	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+}
+#main-header {
+	background: #E9B7B5;
+	color: white;
+	height: 80px; }
+#main-header a {color: white;}
+#logo-header {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none; }
+#logo-header:hover {color: #FADFDD;}
+#logo-header .site-name {
+		display: block;
+		font-weight: 700;
+		font-size: 1.2em; }
+#logo-header .site-desc {
+		display: block;
+		font-weight: 300;
+		font-size: 0.8em;
+		color: #FADFDD; }
+
+nav {
+	float: right;
+}
+	nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		padding-right: 20px;
+	}
+	nav ul li {
+		display: inline-block;
+		line-height: 80px;
+	}
+	nav ul li a {
+		display: block;
+		padding: 0 10px;
+		text-decoration: none;
+	}
+	nav ul li a:hover {
+		background: #FADFDD;
+ }
+ 
+a {
+    text-decoration: none;   /* Elimina el subrayado */
+    color: inherit;          /* Hereda el color del elemento padre (puede ser cualquier color que prefieras) */
+    background: none;        /* Elimina el fondo del enlace */
+    border: none;            /* Elimina el borde si hay alguno */
+    padding: 0;              /* Elimina el padding si existe */
+    margin: 0;               /* Elimina el margen si existe */
+}
+
+main{
+     
+}
+
+.main{
+    display:flex;
+     flex-direction: column-reverse; 
+     width: 70vw;
+     
+     height: calc(100vh - 230px);
+    overflow-y: auto;
+}
+ 
+ #main{
+     color: rgb(115, 114, 112);
+     background-color: rgb(251, 239, 238);
+     padding-bottom: 20px;
+     
+     flex-direction: column; 
+     overflow:hidden;
+ }
+ main h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 15vw;
+ }
+ 
+ main section{
+     display: flex;
+     flex-grow: 1;
+     
+     flex-direction: column;
+     align-items: center;
+ }
+ 
+ main section main article{
+     width: 50vw;
+     border: 2px solid rgb(234, 184, 182);
+     border-radius: 50px;
+     
+     padding-left: 15px;
+     padding-right: 15px;
+     
+     margin-left: 20px;
+     margin-right: 20px;
+     margin-bottom: 20px;
+     
+     text-align: right;
+     align-self: flex-end;
+ }
+ 
+ main section article h3,p{
+     margin:0px;
+     margin-left: 1%;
+ }
+ 
+ main section footer{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     bottom: 10px;
+ }
+ 
+ main section footer textarea{
+     height: 30px;
+     width: calc(70vw - 70px);
+     bottom: 0px;
+     
+     border: 2px solid black;
+     border-radius: 50px;
+     
+     font-size: x-large;
+ }
+ 
+ main section footer img{
+     width: 45px;
+     aspect-radio: 1;
+     padding: 5px;
+ }
+ 
+ main section footer img:hover{
+     cursor: pointer;
+ }
+ 
+ .recibido{
+     text-align: left !important;
+     align-self: flex-start;
+ }
+ 
+ /* Estilo del scrollbar */
+.main {
+    flex: 1 1 auto; /* Hacer que el contenedor ocupe espacio flexible */
+    overflow-y: auto; /* Activar scroll vertical */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Personalización del scroll para navegadores basados en WebKit */
+.main::-webkit-scrollbar {
+    width: 10px; /* Ancho del scrollbar */
+    background-color: #F5F5F5; /* Fondo del área del scrollbar */
+}
+
+/* Color y diseño del thumb (barra desplazable) */
+.main::-webkit-scrollbar-thumb {
+    background-color: #E9B7B5; /* Color de la barra */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid #F5F5F5; /* Espaciado entre la barra y el contenedor */
+}
+
+/* Hover del thumb */
+.main::-webkit-scrollbar-thumb:hover {
+    background-color: #D89793; /* Color más oscuro al pasar el mouse */
+}
+
+/* Fondo del scrollbar */
+.main::-webkit-scrollbar-track {
+    background-color: #F5F5EF; /* Color de la pista */
+    border-radius: 10px; /* Bordes redondeados de la pista */
+}
+
+/* Scroll en navegadores que no son WebKit */
+.main {
+    scrollbar-width: thin; /* Hacer el scroll más delgado */
+    scrollbar-color: #E9B7B5 #F5F5EF; /* Color del thumb y el track */
+}
+
+.error{
+     border: 4px solid red;
+     position:relative;
+}
+
+.error img{
+     width: 50px;
+     aspect-radio: 1;
+     padding: 5px;
+     position: absolute;
+     bottom:-40px;
+     right: -40px;
+}
+ 
